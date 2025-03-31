@@ -1,0 +1,26 @@
+# Ignore node_modules in all packages
+**/node_modules
+
+# Ignore build outputs
+**/dist
+**/build
+**/.turbo
+
+# Ignore Next.js specific files
+**/.next
+**/out
+
+# Ignore logs and temporary files
+**/logs
+**/*.log
+**/.DS_Store
+**/tmp
+**/temp
+
+# Ignore environment files
+**/.env
+**/.env.*.local
+
+# Ignore lockfiles
+**/package-lock.json
+**/pnpm-lock.yaml
