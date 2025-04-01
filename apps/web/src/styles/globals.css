@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-xs: 356px;
+  --breakpoint-sm: 400px;
+  --breakpoint-smd: 532px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 1920px;
+
+  --color-background: oklch(96.47% 0.0158 73.68);
+  --color-foreground: oklch(12.21% 0 0);
+
+  --color-brand-50: oklch(94.94% 0.024 259.82);
+  --color-brand-100: oklch(89.97% 0.049 260.89);
+  --color-brand-200: oklch(79.89% 0.101 261.41);
+  --color-brand-300: oklch(70.44% 0.155 260.71);
+  --color-brand-400: oklch(61.88% 0.206 260.54);
+  --color-brand-500: oklch(54.52% 0.252 261.99);
+  --color-brand-600: oklch(46.66% 0.209 261.58);
+  --color-brand-700: oklch(38.07% 0.167 261.23);
+  --color-brand-800: oklch(28.97% 0.122 260.5);
+  --color-brand-900: oklch(19.39% 0.07 257.3);
+  --color-brand-950: oklch(13.88% 0.041 251.63);
+
+  --color-unread-books: #dc2626;
+  --color-reading-books: #005cff;
+  --color-read-books: #32cd32;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+  @media (width >= --theme(--breakpoint-xs)) {
+    max-width: none;
+  }
+  @media (width >= 1536px) {
+    max-width: 1536px;
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+.tiny-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #666 transparent;
+}
+
+/* Hide increase/buttons controls in number input for Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide increase/buttons controls in number input for Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
