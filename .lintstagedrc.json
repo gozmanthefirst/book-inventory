@@ -1,0 +1,4 @@
+{
+  "**/*.{ts,tsx,js,jsx}": ["pnpm lint-staged", "prettier --write"],
+  "**/*.{html,css,json,md}": ["prettier --write"]
+}
