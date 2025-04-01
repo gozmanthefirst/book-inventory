@@ -1,6 +1,6 @@
-# Book Inventory
+# Book Inventory Backend
 
-The backend for a book inventory. Built using Hono.
+The backend for the project. Built using Hono.
 
 ## Todos
 
