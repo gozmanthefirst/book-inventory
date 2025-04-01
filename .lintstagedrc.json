@@ -1,4 +1,12 @@
 {
-  "**/*.{ts,tsx,js,jsx}": ["pnpm lint-staged", "prettier --write"],
+  "apps/docs/**/*.{ts,tsx,js,jsx}": [
+    "eslint --config apps/docs/eslint.config.js --fix"
+  ],
+  "apps/web/**/*.{ts,tsx,js,jsx}": [
+    "eslint --config apps/web/eslint.config.js --fix"
+  ],
+  "packages/ui/**/*.{ts,tsx,js,jsx}": [
+    "eslint --config packages/ui/eslint.config.mjs --fix"
+  ],
   "**/*.{html,css,json,md}": ["prettier --write"]
 }
