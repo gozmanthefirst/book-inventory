@@ -1,12 +1,9 @@
 {
-  "apps/docs/**/*.{ts,tsx,js,jsx}": [
-    "eslint --config apps/docs/eslint.config.js --fix"
+  "apps/api/**/*.{ts,tsx,js,jsx}": [
+    "eslint --config apps/api/eslint.config.js"
   ],
   "apps/web/**/*.{ts,tsx,js,jsx}": [
-    "eslint --config apps/web/eslint.config.js --fix"
-  ],
-  "packages/ui/**/*.{ts,tsx,js,jsx}": [
-    "eslint --config packages/ui/eslint.config.mjs --fix"
+    "eslint --config apps/web/eslint.config.mjs"
   ],
   "**/*.{html,css,json,md}": ["prettier --write"]
 }
