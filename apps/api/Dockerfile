@@ -51,7 +51,7 @@ COPY --from=builder --chown=hono:nodejs /app/apps/api/package.json /app/apps/api
 COPY --from=builder --chown=hono:nodejs /app/apps/api/.env /app/apps/api/.env
 
 # Set the working directory to the api app
-WORKDIR /app/apps/api
+# WORKDIR /app/apps/api
 
 # Set the environment variable
 ENV NODE_ENV=production \
@@ -65,4 +65,4 @@ USER hono
 EXPOSE 8000
 
 # Start the application
-CMD ["node", "dist/index.js"]
+CMD ["node", "/app/apps/api/dist/index.js"]
