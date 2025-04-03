@@ -16,14 +16,6 @@ This monorepo contains a complete book inventory solution that allows users to m
 - Search and filter functionality
 - Integration with Google Books API for book data
 
-## Project Structure
-
-book-inventory/
-├── apps/
-│ ├── web/ # Next.js frontend
-│ └── api/ # Hono backend
-└── README.md # This file
-
 ## Prerequisites
 
 - Node.js >= v20.11.0
