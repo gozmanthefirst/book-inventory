@@ -131,6 +131,7 @@ export const SignUpForm = () => {
         <p className="text-sm text-neutral-700">
           Already have an account?{" "}
           <Link
+            prefetch
             href={"/sign-in"}
             className="text-brand-500 lg:hover:underline lg:hover:underline-offset-2"
           >

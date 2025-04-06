@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import { redirect } from "next/navigation";
 import { useForm, useStore } from "@tanstack/react-form";
 import { AnimatePresence, motion } from "motion/react";
+import Link from "next/link";
+import { redirect } from "next/navigation";
+import { useState } from "react";
 import { TbAt } from "react-icons/tb";
 import { RotatingLines } from "react-loader-spinner";
 import { toast } from "sonner";
@@ -88,7 +88,7 @@ export const ForgotPasswordForm = () => {
       <div className="flex flex-col gap-1">
         <h1
           className={cn(
-            "text-3xl font-semibold text-brand-500",
+            "text-brand-500 text-3xl font-semibold",
             alegreya.className,
           )}
         >
@@ -97,6 +97,7 @@ export const ForgotPasswordForm = () => {
         <p className="text-sm text-neutral-700">
           Remembered your password?{" "}
           <Link
+            prefetch
             href={"/sign-in"}
             className="text-brand-500 lg:hover:underline lg:hover:underline-offset-2"
           >

@@ -11,12 +11,15 @@ import { RotatingLines } from "react-loader-spinner";
 import { toast } from "sonner";
 import { z } from "zod";
 
+
+
 import { Button } from "@/shared/components/button";
 import { Input } from "@/shared/components/input";
 import { InputIcon } from "@/shared/components/input-icon";
 import { cn } from "@/shared/utils/cn";
 import { alegreya } from "@/styles/fonts";
 import { resetPassword } from "../api/reset-password";
+
 
 const resetPwdSchema = z
   .object({
@@ -120,7 +123,7 @@ export const ResetPasswordForm = () => {
       <div className="flex flex-col gap-1">
         <h1
           className={cn(
-            "text-3xl font-semibold text-brand-500",
+            "text-brand-500 text-3xl font-semibold",
             alegreya.className,
           )}
         >
@@ -129,6 +132,7 @@ export const ResetPasswordForm = () => {
         <p className="text-sm text-neutral-700">
           Remembered your password?{" "}
           <Link
+            prefetch
             href={"/sign-in"}
             className="text-brand-500 lg:hover:underline lg:hover:underline-offset-2"
           >
