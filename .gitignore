@@ -28,6 +28,7 @@ node_modules
 out/
 build
 dist/
+generated/
 
 # logs
 logs/
