@@ -38,9 +38,6 @@ importers:
       '@hono/zod-validator':
         specifier: ^0.4.3
         version: 0.4.3(hono@4.7.5)(zod@3.24.2)
-      '@prisma/client':
-        specifier: ^6.5.0
-        version: 6.5.0(prisma@6.5.0(typescript@5.8.2))(typescript@5.8.2)
       bcryptjs:
         specifier: ^3.0.2
         version: 3.0.2
@@ -69,6 +66,9 @@ importers:
         specifier: ^3.24.2
         version: 3.24.2
     devDependencies:
+      '@repo/database':
+        specifier: workspace:*
+        version: link:../../packages/database
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
@@ -87,9 +87,6 @@ importers:
       globals:
         specifier: ^16.0.0
         version: 16.0.0
-      prisma:
-        specifier: ^6.5.0
-        version: 6.5.0(typescript@5.8.2)
       tsc-alias:
         specifier: ^1.8.13
         version: 1.8.13
@@ -211,6 +208,31 @@ importers:
       tailwindcss:
         specifier: ^4.0.14
         version: 4.1.0
+      typescript:
+        specifier: ^5.8.2
+        version: 5.8.2
+
+  packages/database:
+    dependencies:
+      '@prisma/client':
+        specifier: ^6.5.0
+        version: 6.5.0(prisma@6.5.0(typescript@5.8.2))(typescript@5.8.2)
+    devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      '@types/node':
+        specifier: ^22.13.10
+        version: 22.13.10
+      eslint:
+        specifier: ^9.23.0
+        version: 9.23.0(jiti@2.4.2)
+      prisma:
+        specifier: ^6.5.0
+        version: 6.5.0(typescript@5.8.2)
       typescript:
         specifier: ^5.8.2
         version: 5.8.2
