@@ -2,7 +2,7 @@ FROM node:20-alpine AS base
 
 FROM base AS builder
 
-RUN apk add --no-cache gcompat
+RUN apk add --no-cache gcompat libc6-compat
 
 # Set up the application directory
 WORKDIR /app
@@ -20,21 +20,24 @@ COPY packages ./packages
 # Copy everything required for the API app to work
 COPY apps/api/package.json ./apps/api/package.json
 COPY apps/api/tsconfig.json ./apps/api/tsconfig.json
-COPY apps/api/.env ./apps/api/.env
+# COPY apps/api/.env ./apps/api/.env
 COPY apps/api/src ./apps/api/src
-COPY apps/api/prisma ./apps/api/prisma
 
 # Install dependencies using pnpm workspace features and build application
 RUN npm install -g pnpm && \
-    pnpm install --recursive --filter=api --filter=@repo/eslint-config --filter=@repo/typescript-config --frozen-lockfile && \
-    cd apps/api && \
-    pnpm exec prisma generate && \
+    pnpm install && \
+    cd packages/database && \
+    pnpm db:generate && \
+    cd ../../apps/api && \
     pnpm build && \
     pnpm prune --prod
 
 # Production stage with only essential files
 FROM base AS runner
 WORKDIR /app
+
+# Install wget for healthcheck
+RUN apk add --no-cache wget
 
 # Create a non-root user
 RUN addgroup --system --gid 1001 nodejs && \
@@ -48,10 +51,7 @@ COPY --from=builder --chown=hono:nodejs /app/apps/api/node_modules /app/apps/api
 COPY --from=builder --chown=hono:nodejs /app/apps/api/dist /app/apps/api/dist
 COPY --from=builder --chown=hono:nodejs /app/package.json /app/package.json
 COPY --from=builder --chown=hono:nodejs /app/apps/api/package.json /app/apps/api/package.json
-COPY --from=builder --chown=hono:nodejs /app/apps/api/.env /app/apps/api/.env
-
-# Set the working directory to the api app
-# WORKDIR /app/apps/api
+# COPY --from=builder --chown=hono:nodejs /app/apps/api/.env /app/apps/api/.env
 
 # Set the environment variable
 ENV NODE_ENV=production \
