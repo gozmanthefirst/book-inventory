@@ -1,8 +1,7 @@
 import { randomBytes } from "crypto";
 
-import type { User } from "@prisma/client";
-
-import db from "@/config/prisma";
+import type { User } from "@repo/database";
+import { db } from "@repo/database";
 
 export const createSession = async (
   user: User,

@@ -1,4 +1,4 @@
-import type { User } from "@prisma/client";
+import type { User } from "@repo/database";
 import * as bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 

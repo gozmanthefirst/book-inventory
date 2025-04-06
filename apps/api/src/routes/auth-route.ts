@@ -1,20 +1,33 @@
-import { getConnInfo } from "@hono/node-server/conninfo";
 import { Hono } from "hono";
+import { getConnInfo } from "@hono/node-server/conninfo";
+import { db } from "@repo/database";
 import { StatusCodes } from "http-status-codes";
 
-
-
-import db from "@/config/prisma";
 import { comparePasswords, hashPassword } from "@/lib/auth";
 import { sendPasswordResetEmail, sendVerificationEmail } from "@/lib/email";
-import { authRateLimiter, emailRateLimiter, passwordResetLimiter } from "@/lib/rate-limit";
-import { createPasswordResetToken, validatePasswordResetToken } from "@/lib/reset-password";
+import {
+  authRateLimiter,
+  emailRateLimiter,
+  passwordResetLimiter,
+} from "@/lib/rate-limit";
+import {
+  createPasswordResetToken,
+  validatePasswordResetToken,
+} from "@/lib/reset-password";
 import { createSession, validateSession } from "@/lib/session";
-import { createVerificationToken, validateVerificationToken } from "@/lib/verification";
+import {
+  createVerificationToken,
+  validateVerificationToken,
+} from "@/lib/verification";
 import { zv } from "@/middleware/validator";
 import { errorResponse, successResponse } from "@/utils/api-response";
-import { loginSchema, requestPasswordResetSchema, resendVerificationSchema, resetPasswordSchema, signUpSchema } from "@/validators/auth-validator";
-
+import {
+  loginSchema,
+  requestPasswordResetSchema,
+  resendVerificationSchema,
+  resetPasswordSchema,
+  signUpSchema,
+} from "@/validators/auth-validator";
 
 const auth = new Hono({ strict: false });
 

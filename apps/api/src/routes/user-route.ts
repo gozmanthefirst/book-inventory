@@ -1,7 +1,7 @@
 import { Hono } from "hono";
+import { db } from "@repo/database";
 import { StatusCodes } from "http-status-codes";
 
-import db from "@/config/prisma";
 import { errorResponse, successResponse } from "@/utils/api-response";
 
 const user = new Hono({ strict: false });
