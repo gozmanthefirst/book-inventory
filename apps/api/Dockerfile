@@ -27,6 +27,7 @@ RUN npm install -g pnpm && \
     pnpm install --recursive --filter=api --filter=@repo/database --filter=@repo/eslint-config --filter=@repo/typescript-config --frozen-lockfile && \
     cd packages/database && \
     pnpm db:generate && \
+    pnpm build && \
     cd ../../apps/api && \
     pnpm build && \
     pnpm prune --prod
