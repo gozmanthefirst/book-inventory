@@ -15,7 +15,7 @@
     "db:deploy": "prisma migrate deploy",
     "db:studio": "prisma studio",
     "build": "tsc",
-    "dev": "tsc -w --preserveWatchOutput",
+    "dev": "tsc -w",
     "lint": "eslint . --ext .ts,.js"
   },
   "dependencies": {
