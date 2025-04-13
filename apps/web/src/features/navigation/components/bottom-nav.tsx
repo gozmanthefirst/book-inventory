@@ -27,7 +27,7 @@ export const BottomNav = () => {
   const router = useRouter();
 
   return (
-    <div className="pointer-events-none sticky bottom-0 z-50 flex items-center justify-center py-4">
+    <div className="pointer-events-none sticky bottom-0 z-40 flex items-center justify-center py-4">
       <Tabs
         defaultValue="/search"
         value={pathname}
