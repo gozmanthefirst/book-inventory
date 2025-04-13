@@ -23,12 +23,10 @@ user.get("/me", async (c) => {
 
     return c.json(
       successResponse("Session valid.", {
-        user: {
-          id: userWithBooks?.id,
-          email: userWithBooks?.email,
-          name: userWithBooks?.name,
-          books: userWithBooks?.books,
-        },
+        id: userWithBooks?.id,
+        email: userWithBooks?.email,
+        name: userWithBooks?.name,
+        books: userWithBooks?.books,
       }),
       StatusCodes.OK,
     );
