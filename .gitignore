@@ -39,11 +39,6 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# VS Code
-.vscode/
-!.vscode/launch.json
-!.vscode/*.code-snippets
-
 # JetBrains
 .idea/workspace.xml
 .idea/usage.statistics.xml
