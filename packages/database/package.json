@@ -19,14 +19,14 @@
     "lint": "eslint . --ext .ts,.js"
   },
   "dependencies": {
-    "@prisma/client": "^6.5.0"
+    "@prisma/client": "^6.8.2"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@types/node": "^22.13.10",
-    "eslint": "^9.23.0",
-    "prisma": "^6.5.0",
-    "typescript": "^5.8.2"
+    "@types/node": "^22.15.21",
+    "eslint": "^9.27.0",
+    "prisma": "^6.8.2",
+    "typescript": "^5.8.3"
   }
 }
