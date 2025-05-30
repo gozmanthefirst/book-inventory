@@ -15,7 +15,6 @@
     "db:reset": "prisma migrate reset",
     "db:deploy": "prisma migrate deploy",
     "db:studio": "prisma studio",
-    "postinstall": "prisma generate",
     "build": "tsc",
     "dev": "tsc -w",
     "lint": "eslint . --ext .ts,.js"
