@@ -31,13 +31,6 @@ app.use(
   }),
 );
 
-// CSRF Protection
-// app.use(
-//   csrf({
-//     origin: ["https://books.gozman.dev", "http://localhost:3000"],
-//   }),
-// );
-
 // Security Headers
 app.use(
   "*",
