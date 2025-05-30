@@ -1,7 +1,7 @@
 "use server";
 
 import { cookies } from "next/headers";
-import { ReadStatus } from "@prisma/client";
+import { ReadStatus } from "@repo/database";
 import axios from "axios";
 
 import { ServerActionResponse } from "@/shared/types/shared-types";

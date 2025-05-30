@@ -1,4 +1,4 @@
-import { Book, Prisma, User } from "@prisma/client";
+import { Book, Prisma, User } from "@repo/database";
 
 export type ServerActionResponse<T = undefined> = T extends undefined
   ?

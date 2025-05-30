@@ -1,4 +1,4 @@
-import { ReadStatus } from "@prisma/client";
+import { ReadStatus } from "@repo/database";
 import axios from "axios";
 
 import { GoogleBookResponse, SimpleBook } from "@/shared/types/google-book";
