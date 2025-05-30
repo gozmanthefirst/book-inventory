@@ -1,7 +1,5 @@
-# Book Inventory Backend
+# Book Inventory Backend [ARCHIVED]
 
-The backend for the project. Built using Hono.
+> **⚠️ This project is archived and no longer actively maintained.**
 
-## Todos
-
-- Implement Google OAuth
+The backend API for the book inventory project. Built using Hono framework to provide RESTful endpoints for book management.

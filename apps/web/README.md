@@ -1,10 +1,5 @@
-# Book Inventory Frontend
+# Book Inventory Frontend [ARCHIVED]
 
-The frontend for the project. Built with Next.js and Google Books API.
+> **⚠️ This project is archived and no longer actively maintained.**
 
-## Todos
-
-- Dark mode
-- Form for adding books not found via search
-- Popular genres visualization
-- Reading trends analysis
+The frontend for the book inventory project. Built with Next.js and Google Books API integration for managing personal book collections.
